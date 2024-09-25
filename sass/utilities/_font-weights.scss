@@ -1,5 +1,8 @@
 @use "../abstracts/" as *;
 
+.fw-light {
+  font-weight: $font-weight-light;
+}
 .fw-regular {
   font-weight: $font-weight-default;
 }

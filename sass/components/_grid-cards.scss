@@ -1,0 +1,65 @@
+@use "../abstracts/" as *;
+
+.grid-cards{
+
+    display: grid;
+    gap: $size-6;
+    margin-inline: auto;
+
+    img{
+        margin-block-start: 2.1rem;
+        margin-inline-start: auto;
+        max-width: 3.56rem;
+
+        @include mq(large){
+            max-width: 4rem;
+            margin-block-start: 2.5rem;
+        }
+    }
+
+    .card{
+        border-top: $card-border;
+    }
+
+    &>:nth-child(1){
+        border-color: $clr-feat-supervisor;
+    }
+    &>:nth-child(2){
+        border-color: $clr-feat-team-builder;
+    }
+    &>:nth-child(3){
+        border-color: $clr-feat-karma;
+    }
+    &>:nth-child(4){
+        border-color: $clr-feat-calculator;
+    }
+
+    @include mq(medium){
+        max-width: 45.625rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(large){
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+        grid-template-areas: 
+        "...  two ..."
+        "one two four"
+        "one three four"
+        "... three ...";
+
+        &>:nth-child(1){
+            grid-area: one;
+        }
+        &>:nth-child(2){
+            grid-area: two;
+        }
+        &>:nth-child(3){
+            grid-area: three;
+        }
+        &>:nth-child(4){
+            grid-area: four;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+.header{
+    margin-block-start: 5.31rem;
+    margin-block-end: $size-12;
+    
+    &__inner{
+        max-width: 33.75rem;
+        margin-inline: auto;
+    }
+
+    @include mq(large){
+        margin-block-start: 5rem;
+        margin-block-end: $size-11;
+        h2{
+            font-size: $font-size-800;
+        }
+    }
+}
